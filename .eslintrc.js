@@ -420,5 +420,4 @@ module.exports = {
         "createCapture": false,
         "createElement": false
     }
-}
 };
