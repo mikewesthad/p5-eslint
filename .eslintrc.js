@@ -6,12 +6,17 @@ module.exports = {
     "rules": {
         // Allow unused global variables - e.g. setup, draw, etc.
         "no-unused-vars": ["error", { "vars": "local" }],
-        // Console is a beginner's friend
-        "no-console": 0
+        // Console is a beginner's friend, so allow it
+        "no-console": 0,
+        // Allow redeclaring of variables, so that things reusing "i" in
+        // multiple loops doesn't lead to confusion
+        "no-redeclare": 0
     },
     // Globals parsed from a p5 instance - don't allow them to be overwritten
     "globals": {
+        "p5": false,
         "remove": false,
+        "setup": false,
         "canvas": false,
         "width": false,
         "height": false,
@@ -379,6 +384,21 @@ module.exports = {
         "perspective": false,
         "ortho": false,
         "orbitControl": false,
+        "getAudioContext": false,
+        "isSupported": false,
+        "isFileSupported": false,
+        "getMasterVolume": false,
+        "masterVolume": false,
+        "soundOut": false,
+        "sampleRate": false,
+        "freqToMidi": false,
+        "midiToFreq": false,
+        "soundFormats": false,
+        "disposeSound": false,
+        "loadSound": false,
+        "createConvolver": false,
+        "setBPM": false,
+        "saveSound": false,
         "select": false,
         "selectAll": false,
         "removeElements": false,
@@ -398,21 +418,7 @@ module.exports = {
         "VIDEO": false,
         "AUDIO": false,
         "createCapture": false,
-        "createElement": false,
-        "getAudioContext": false,
-        "isSupported": false,
-        "isFileSupported": false,
-        "getMasterVolume": false,
-        "masterVolume": false,
-        "soundOut": false,
-        "sampleRate": false,
-        "freqToMidi": false,
-        "midiToFreq": false,
-        "soundFormats": false,
-        "disposeSound": false,
-        "loadSound": false,
-        "createConvolver": false,
-        "setBPM": false,
-        "saveSound": false
+        "createElement": false
     }
+}
 };

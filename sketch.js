@@ -15,7 +15,9 @@ new p5(function (p) {
     p.setup = function () {
         // Loop through all the enumerable properties on the p5 instance and on
         // the p5 prototype chain
-        var eslintGlobalsConfig = {}; 
+        var eslintGlobalsConfig = {
+            "p5": false
+        }; 
         for (var key in p) {
             // If the variable is not "private"
             if (key[0] !== "_") eslintGlobalsConfig[key] = false;
